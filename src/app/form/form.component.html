@@ -1,0 +1,23 @@
+<div class="container-fluid">
+    <form (ngSubmit)="submitQuote()">
+  
+      <br>
+  
+       <div class="form-group">
+       <label for="name"><strong>Your Name:</strong></label>
+       <input type="text"  name="publisher" class="form-control" id="exampleFormControlInput1" [(ngModel)]="quotePublisher" placeholder="">
+      </div>
+       <br>
+      <div class="form-group">
+          <label for="quotes"><strong>Quote:</strong></label>
+          <input type="text" name="quote" class="form-control" id="exampleFormControlInput1" [(ngModel)]="quoteStr" placeholder="">
+      </div>
+       <br>
+      <div class="form-group">
+          <label for="author"><strong>Author:</strong></label>
+          <input type="text" name="author" class="form-control" id="exampleFormControlInput1"  [(ngModel)]="quoteAuthor" placeholder="">
+      </div>
+       <br>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>

@@ -1,0 +1,38 @@
+<!-- <app-form (emitQuote)="addQuote($event)"></app-form>
+<div *ngFor="let quote of quotes; let i=index">
+  <p appHighlight>
+      Quote:{{quote.quotestr}}
+    </p> -->
+  <!-- <app-details [quote]="quote"></app-details> -->
+  <div class="container-fluid" >
+    <h1>QUOTES</h1>
+  </div>
+
+  <app-form (emitQuote)="addQuote($event)"></app-form>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10">
+        <hr>
+        <div  class="myQuote"*ngFor="let quote of quotes; let i=index">
+          <p appHighlight *ngIf="highestUpvote()===quote.upvotes && quote.upvotes>0">{{quote.quote}}</p>
+          <p  *ngIf="highestUpvote()!==quote.upvotes || quote.upvotes===0">{{quote.quote}}</p>
+          <app-details [quote]="quote"></app-details>
+
+          <!-- <hr size="50"> -->
+
+
+          <button class="btn btn-primary" id="upvote" (click)="upvote(i)">Upvote</button>
+          &nbsp;
+          <button class="btn" (click)="downvote(i)">Downvote</button>
+          &nbsp;
+          <button class="btn btn-danger" id="delete" (click)="delQuote(i)">Delete</button>
+
+          <hr>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- </div> -->
